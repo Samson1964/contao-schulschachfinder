@@ -11,7 +11,8 @@ if(!$GLOBALS['BE_MOD']['dsb'])
 	array_insert($GLOBALS['BE_MOD'], 0, $dsb);
 }
 
-$GLOBALS["BE_MOD"]["dsb"]["schulschachfinder"] = array(
+$GLOBALS["BE_MOD"]["dsb"]["schulschachfinder"] = array
+(
 	"tables"      => array("tl_schulschachfinder"),
 	"icon"        => "system/modules/schulschachfinder/assets/images/icon.png",
 );
