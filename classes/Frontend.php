@@ -49,7 +49,7 @@ class Frontend extends \Module
 	{
 		
 		// Datensätze einlesen
-		$result = \Database::getInstance()->prepare("SELECT * FROM tl_schulschachfinder WHERE published = ?")
+		$result = \Database::getInstance()->prepare("SELECT * FROM tl_schulschachfinder WHERE published = ? ORDER BY createDate DESC")
 		                                  ->execute(1);
 
 		$contentArr = array();
@@ -61,7 +61,7 @@ class Frontend extends \Module
 				$details = '';
 				if (FE_USER_LOGGED_IN)
 				{
-					$details = '<a class="inline cboxElement myButton" href="#hidden_content_finder_'.$result->id.'" title="Details zur Anzeige">Details</a>';
+					$details = '<a class="inline cboxElement button" href="#hidden_content_finder_'.$result->id.'" title="Details zur Anzeige">Details</a>';
 				}
 
 				$contentArr[] = array
