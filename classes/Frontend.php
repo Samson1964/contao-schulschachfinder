@@ -61,7 +61,7 @@ class Frontend extends \Module
 				$details = '';
 				if (FE_USER_LOGGED_IN)
 				{
-					$details = '<a class="inline cboxElement" href="#hidden_content_finder_'.$result->id.'" title="Details zur Anzeige">Details</a>';
+					$details = '<a class="inline cboxElement myButton" href="#hidden_content_finder_'.$result->id.'" title="Details zur Anzeige">Details</a>';
 				}
 
 				$contentArr[] = array

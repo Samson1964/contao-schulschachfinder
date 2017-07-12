@@ -1,5 +1,6 @@
 <?php
 	$GLOBALS['TL_JAVASCRIPT'][] = 'system/modules/schulschachfinder/assets/js/colorbox.js';
+	$GLOBALS['TL_CSS'][] = 'system/modules/schulschachfinder/assets/css/default.css';
 ?>
 
 <div class="<?= $this->class ?> block"<?= $this->cssID ?><?php if ($this->style): ?> style="<?= $this->style ?>"<?php endif; ?>> 
