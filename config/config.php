@@ -20,11 +20,7 @@ $GLOBALS["BE_MOD"]["dsb"]["schulschachfinder"] = array
 /**
  * Frontend-Module
  */
-//$GLOBALS['FE_MOD']['schulschachfinder'] = array
-//(
-//	'wertungsreferenten' => 'Samson\Adressen\Wertungsreferenten',
-//	'adressensuche'      => 'Samson\Adressen\Suche',
-//);  
+$GLOBALS['FE_MOD']['dsb']['schulschachfinder'] = 'Samson\Schulschachfinder\Frontend';
 
 
 /**
