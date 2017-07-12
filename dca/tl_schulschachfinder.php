@@ -110,7 +110,8 @@ $GLOBALS['TL_DCA']['tl_schulschachfinder'] = array
 				3                  => 'ein Schachverein'
 			),
 			'exclude'                 => true,
-			'search'                  => true,
+			'search'                  => false,
+			'filter'                  => true,
 			'eval'                    => array('mandatory'=>false, 'maxlength'=>1, 'tl_class'=>'long'),
 			'sql'                     => "int(1) unsigned NOT NULL default '0'"
 		),
@@ -125,7 +126,8 @@ $GLOBALS['TL_DCA']['tl_schulschachfinder'] = array
 				3                  => 'suchen einen Schachverein'
 			),
 			'exclude'                 => true,
-			'search'                  => true,
+			'search'                  => false,
+			'filter'                  => true,
 			'eval'                    => array('mandatory'=>false, 'maxlength'=>1, 'tl_class'=>'long'),
 			'sql'                     => "int(1) unsigned NOT NULL default '0'"
 		),
@@ -140,7 +142,8 @@ $GLOBALS['TL_DCA']['tl_schulschachfinder'] = array
 				3                  => 'eine generelle Zusammenarbeit anzustreben.'
 			),
 			'exclude'                 => true,
-			'search'                  => true,
+			'search'                  => false,
+			'filter'                  => true,
 			'eval'                    => array('mandatory'=>false, 'maxlength'=>1, 'tl_class'=>'long'),
 			'sql'                     => "int(1) unsigned NOT NULL default '0'"
 		),
