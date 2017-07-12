@@ -81,7 +81,7 @@ $GLOBALS['TL_DCA']['tl_schulschachfinder'] = array
 	// Paletten
 	'palettes' => array
 	(
-		'default'                     => '{was_legend},wir,suchen,ziel;{ort_legend},plz,ort;{contact_legende},ansprechpartner,telefon,email,webseite,bemerkung;{published_legend},published'
+		'default'                     => '{was_legend},wir,suchen,ziel;{ort_legend},plz,ort;{contact_legend},ansprechpartner,telefon,email,webseite,bemerkung;{publish_legend},published'
 	),
 
 	// Felder
@@ -102,29 +102,47 @@ $GLOBALS['TL_DCA']['tl_schulschachfinder'] = array
 		'wir' => array
 		(
 			'label'                   => &$GLOBALS['TL_LANG']['tl_schulschachfinder']['wir'],
-			'inputType'               => 'text',
+			'inputType'               => 'select',
+			'options'                 => array
+			(
+				1                  => 'eine Schule',
+				2                  => 'eine Schachschule',
+				3                  => 'ein Schachverein'
+			),
 			'exclude'                 => true,
 			'search'                  => true,
-			'eval'                    => array('mandatory'=>false, 'maxlength'=>255, 'tl_class'=>'w50'),
-			'sql'                     => "varchar(255) NOT NULL default ''"
+			'eval'                    => array('mandatory'=>false, 'maxlength'=>1, 'tl_class'=>'long'),
+			'sql'                     => "int(1) unsigned NOT NULL default '0'"
 		),
 		'suchen' => array
 		(
 			'label'                   => &$GLOBALS['TL_LANG']['tl_schulschachfinder']['suchen'],
-			'inputType'               => 'text',
+			'inputType'               => 'select',
+			'options'                 => array
+			(
+				1                  => 'suchen eine Schule',
+				2                  => 'suchen eine Schachschule',
+				3                  => 'suchen einen Schachverein'
+			),
 			'exclude'                 => true,
 			'search'                  => true,
-			'eval'                    => array('mandatory'=>false, 'maxlength'=>255, 'tl_class'=>'w50'),
-			'sql'                     => "varchar(255) NOT NULL default ''"
+			'eval'                    => array('mandatory'=>false, 'maxlength'=>1, 'tl_class'=>'long'),
+			'sql'                     => "int(1) unsigned NOT NULL default '0'"
 		),
 		'ziel' => array
 		(
 			'label'                   => &$GLOBALS['TL_LANG']['tl_schulschachfinder']['ziel'],
-			'inputType'               => 'text',
+			'inputType'               => 'select',
+			'options'                 => array
+			(
+				1                  => 'eine Schach-AG ins Leben zu rufen.',
+				2                  => 'die Kinder aus unserer Schach-AG dorthin zu vermitteln.',
+				3                  => 'eine generelle Zusammenarbeit anzustreben.'
+			),
 			'exclude'                 => true,
 			'search'                  => true,
-			'eval'                    => array('mandatory'=>false, 'maxlength'=>255, 'tl_class'=>'w50'),
-			'sql'                     => "varchar(255) NOT NULL default ''"
+			'eval'                    => array('mandatory'=>false, 'maxlength'=>1, 'tl_class'=>'long'),
+			'sql'                     => "int(1) unsigned NOT NULL default '0'"
 		),
 		'plz' => array
 		(
@@ -169,7 +187,7 @@ $GLOBALS['TL_DCA']['tl_schulschachfinder'] = array
 			'sorting'                 => true,
 			'flag'                    => 1,
 			'search'                  => true,
-			'eval'                    => array('mandatory'=>false, 'maxlength'=>64, 'tl_class'=>'w50'),
+			'eval'                    => array('mandatory'=>false, 'maxlength'=>64, 'tl_class'=>'w50 clr'),
 			'sql'                     => "varchar(64) NOT NULL default ''"
 		),
 		'email' => array
@@ -191,7 +209,7 @@ $GLOBALS['TL_DCA']['tl_schulschachfinder'] = array
 			'sorting'                 => true,
 			'flag'                    => 1,
 			'search'                  => false,
-			'eval'                    => array('mandatory'=>false, 'maxlength'=>255, 'tl_class'=>'long', 'rgxp'=>'url'),
+			'eval'                    => array('mandatory'=>false, 'maxlength'=>255, 'tl_class'=>'long clr', 'rgxp'=>'url'),
 			'sql'                     => "varchar(255) NOT NULL default ''"
 		),
 		'bemerkung' => array
