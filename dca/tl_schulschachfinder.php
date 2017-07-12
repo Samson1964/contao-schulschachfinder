@@ -106,6 +106,16 @@ $GLOBALS['TL_DCA']['tl_schulschachfinder'] = array
 			'label'                   => &$GLOBALS['TL_LANG']['tl_schulschachfinder']['tstamp'],
 			'sql'                     => "int(10) unsigned NOT NULL default '0'"
 		),
+		'createDate' => array
+		(
+			'label'                   => &$GLOBALS['TL_LANG']['tl_schulschachfinder']['createDate'],
+			'flag'                    => 5,
+			'save_callback'           => array
+			(
+				array('tl_schulschachfinder', 'saveCreatedate')
+			),
+			'sql'                     => "int(10) unsigned NOT NULL default '0'"
+		),
 		'wir' => array
 		(
 			'label'                   => &$GLOBALS['TL_LANG']['tl_schulschachfinder']['wir'],
@@ -318,6 +328,27 @@ class tl_schulschachfinder extends \Backend
 		$this->Database->prepare("UPDATE tl_schulschachfinder SET tstamp=". time() .", published='" . ($blnPublished ? '' : '1') . "' WHERE id=?")
 		               ->execute($intId);
 		$this->createNewVersion('tl_schulschachfinder', $intId);
+	}
+
+	/**
+	 * Erstellungsdatum schreiben
+	 * @param mixed
+	 * @return mixed
+	 */
+	public function saveCreatedate($varValue)
+	{
+		//die("Callback exit");
+		if(!$varValue)
+		{
+			//\System::log('[Schulschachfinder] New Item created: '.\Input::post('plz').' '.\Input::post('ort'), __CLASS__.'::'.__FUNCTION__, TL_CRON); 
+			$varValue = time();
+			\System::log('[Schulschachfinder] Variable nicht vorhanden: '.$varValue, __CLASS__.'::'.__FUNCTION__, TL_FORMS); 
+		}
+		else
+		{
+			\System::log('[Schulschachfinder] Variable vorhanden: '.$varValue, __CLASS__.'::'.__FUNCTION__, TL_FORMS); 
+		}
+		return $varValue;
 	}
 
 }

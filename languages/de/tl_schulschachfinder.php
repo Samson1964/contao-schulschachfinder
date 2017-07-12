@@ -1,6 +1,12 @@
 <?php
 
 /**
+ * Backend-Modul: Versteckte Felder
+ */
+$GLOBALS["TL_LANG"]["tl_schulschachfinder"]["createDate"][0] = "Erstellungsdatum";
+$GLOBALS["TL_LANG"]["tl_schulschachfinder"]["createDate"][1] = "Meldung erstellt am TT.MM.JJJJ";
+
+/**
  * Backend-Modul: Übersetzungen im Eingabeformular
  */
 $GLOBALS["TL_LANG"]["tl_schulschachfinder"]["was_legend"] = "Wer sucht was?";
@@ -18,20 +24,18 @@ $GLOBALS["TL_LANG"]["tl_schulschachfinder"]["ort"][0] = "Ort";
 $GLOBALS["TL_LANG"]["tl_schulschachfinder"]["ort"][1] = "Geben Sie hier den Ort ein.";
 
 $GLOBALS["TL_LANG"]["tl_schulschachfinder"]["contact_legend"] = "Kontakt";
-
 $GLOBALS["TL_LANG"]["tl_schulschachfinder"]["ansprechpartner"][0] = "Ansprechpartner";
 $GLOBALS["TL_LANG"]["tl_schulschachfinder"]["ansprechpartner"][1] = "Name des Ansprechpartners";
 $GLOBALS["TL_LANG"]["tl_schulschachfinder"]["telefon"][0] = "Telefon";
 $GLOBALS["TL_LANG"]["tl_schulschachfinder"]["telefon"][1] = "Geben Sie hier die Telefonnummer ein.";
 $GLOBALS["TL_LANG"]["tl_schulschachfinder"]["email"][0] = "E-Mail";
-$GLOBALS["TL_LANG"]["tl_schulschachfinder"]["email"][1] = "Geben Sie hier die E-Mail-Meldung ein.";
+$GLOBALS["TL_LANG"]["tl_schulschachfinder"]["email"][1] = "Geben Sie hier die E-Mail-Adresse ein.";
 $GLOBALS["TL_LANG"]["tl_schulschachfinder"]["webseite"][0] = "Homepage";
 $GLOBALS["TL_LANG"]["tl_schulschachfinder"]["webseite"][1] = "Geben Sie hier die URL der Internet-Homepage ein.";
 $GLOBALS["TL_LANG"]["tl_schulschachfinder"]["bemerkung"][0] = "Bemerkung";
 $GLOBALS["TL_LANG"]["tl_schulschachfinder"]["bemerkung"][1] = "Bemerkungen zur Meldung";
 
 $GLOBALS["TL_LANG"]["tl_schulschachfinder"]["publish_legend"] = "Veröffentlichung";
-
 $GLOBALS["TL_LANG"]["tl_schulschachfinder"]["published"][0] = "Veröffentlicht";
 $GLOBALS["TL_LANG"]["tl_schulschachfinder"]["published"][1] = "Meldung veröffentlichen";
 
