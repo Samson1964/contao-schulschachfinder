@@ -49,7 +49,7 @@ class Frontend extends \Module
 	{
 		
 		// Datensätze einlesen
-		$result = \Database::getInstance()->prepare("SELECT * FROM tl_schulschachfinder WHERE published = ? ORDER tstamp DESC")
+		$result = \Database::getInstance()->prepare("SELECT * FROM tl_schulschachfinder WHERE published = ?")
 		                                  ->execute(1);
 
 		$contentArr = array();
@@ -57,15 +57,36 @@ class Frontend extends \Module
 		{
 			while($result->next())
 			{
+				// Details zusammenbauen, wenn FE-User eingeloggt ist
+				$details = '';
+				if (!FE_USER_LOGGED_IN)
+				{
+					$details = '<a class="inline cboxElement" href="#hidden_content_finder_'.$result->id.'" title="Details zur Anzeige">Details</a>';
+				}
+
 				$contentArr[] = array
 				(
+					'item_id'         => $result->id,
+					'wir'             => $result->wir,
+					'suchen'          => $result->suchen,
+					'ziel'            => $result->ziel,
+					'anfrage'         => 'Wir sind '.$GLOBALS['schulschachfinder']['wir'][$result->wir].' und '.$GLOBALS['schulschachfinder']['suchen'][$result->suchen].', um '.$GLOBALS['schulschachfinder']['ziel'][$result->ziel],
+					'plz'             => $result->plz,
+					'ort'             => $result->ort,
+					'ansprechpartner' => $result->ansprechpartner,
+					'telefon'         => $result->telefon,
+					'email'           => $result->email ? '{{email::'.$result->email.'}}' : '',
+					'webseite'        => $result->webseite ? '<a href="'.$result->webseite.'" target="_blank">'.$result->webseite.'</a>' : '',
+					'bemerkung'       => $result->bemerkung,
+					'details' => $details
 				);
 			}
 		}
-			
+
 		$this->Template->headline = $this->headline;
 		$this->Template->hl = $this->hl;
 		$this->Template->liste = $contentArr;
+		$this->Template->view_details = 1; //FE_USER_LOGGED_IN;
 		
 	}
 
