@@ -59,7 +59,7 @@ class Frontend extends \Module
 			{
 				// Details zusammenbauen, wenn FE-User eingeloggt ist
 				$details = '';
-				if (!FE_USER_LOGGED_IN)
+				if (FE_USER_LOGGED_IN)
 				{
 					$details = '<a class="inline cboxElement" href="#hidden_content_finder_'.$result->id.'" title="Details zur Anzeige">Details</a>';
 				}
@@ -86,7 +86,7 @@ class Frontend extends \Module
 		$this->Template->headline = $this->headline;
 		$this->Template->hl = $this->hl;
 		$this->Template->liste = $contentArr;
-		$this->Template->view_details = 1; //FE_USER_LOGGED_IN;
+		$this->Template->view_details = FE_USER_LOGGED_IN;
 		
 	}
 
